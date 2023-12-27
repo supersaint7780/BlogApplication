@@ -1,8 +1,19 @@
-# React + Vite
+# Blog Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a blog application that I created while learning react. In this project we will be using react and tailwind for the frontend part and for backend we will using appwrite BaaS.
 
-Currently, two official plugins are available:
+The application will be a full fledged application in which a use will be able to add and edit posts.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Packages used
+- tailwindcss, postcss, autoprefixer (for styling)
+- appwrite
+- react-router-dom
+- react-hook-form
+- html-react-parser
+- @tinymce/tinymce-react
+- react-reduc
+- @reduxjs/toolkit
+
+### Current Features Implemented
+
+### Features To Implement
