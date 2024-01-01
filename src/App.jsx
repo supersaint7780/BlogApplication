@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import authService from "./appwrite/auth";
 import { login, logout } from "./store/authSlice";
-import {Header, Footer} from "./components";
+import { Header, Footer } from "./components";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -11,8 +11,8 @@ export default function App() {
   useEffect(() => {
     authService.getCurrentUser()
       .then((userData) => {
-        if(userData) {
-          dispatch(login({userData}));
+        if (userData) {
+          dispatch(login({ userData }));
         } else {
           dispatch(logout());
         }
@@ -21,7 +21,7 @@ export default function App() {
 
   }, []);
 
-  if(loading) {
+  if (loading) {
     return <div>Loading...</div>
   } else {
     return (
