@@ -10,40 +10,25 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
             <Controller
                 name={name || "content"}
                 control={control}
-                render={({ field: { onChange } }) => (
+                render={({ field }) => (
                     <Editor
-                        initialValue={defaultValue}
+                        apiKey='m82z3qulas5i3d4es5njwyjqzxlljl9oq6x09951mly0nlp8'
+                        // initialValue={defaultValue}
                         init={{
                             initialValue: defaultValue,
                             height: 500,
                             menubar: true,
-                            plugins: [
-                                "image",
-                                "advlist",
-                                "autolink",
-                                "lists",
-                                "link",
-                                "image",
-                                "charmap",
-                                "preview",
-                                "anchor",
-                                "searchreplace",
-                                "visualblocks",
-                                "code",
-                                "fullscreen",
-                                "insertdatetime",
-                                "media",
-                                "table",
-                                "code",
-                                "help",
-                                "wordcount",
-                                "anchor",
+                            mergetags_list: [
+                                { value: 'First.Name', title: 'First Name' },
+                                { value: 'Email', title: 'Email' },
                             ],
-                            toolbar:
-                                "undo redo | blocks | image | bold italic forecolor | alignleft aligncenter bold italic forecolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent |removeformat | help",
+                            plugins: 'anchor autolink charmap image link lists media searchreplace table visualblocks wordcount inlinecss',
+                            toolbar: 'undo redo | blocks | bold italic underline | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
                             content_style: "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }"
                         }}
-                        onEditorChange={onChange}
+                        // onEditorChange={onChange}
+                        onEditorChange={(content) => field.onChange(content)}
+                        value={field.value}
                     />
                 )}
             />

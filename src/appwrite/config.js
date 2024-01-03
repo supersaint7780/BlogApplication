@@ -33,11 +33,10 @@ export class DatabaseService {
             );
         } catch (error) {
             console.log("Appwrite DatabaseService :: createPost :: error", error);
-            return false;
         }
     }
 
-    async updatePost(slug, { title, content, featuredImage, status, userId }) {
+    async updatePost(slug, { title, content, featuredImage, status}) {
         try {
             return await title.databases.updateDocument(
                 conf.appwriteDatabaseId,
@@ -52,7 +51,6 @@ export class DatabaseService {
             );
         } catch (error) {
             console.log("Appwrite DatabaseService :: updatePost :: error", error);
-            return false;
         }
     }
 
